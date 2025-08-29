@@ -1,10 +1,14 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 from db import init_db
 import tasks
 
 app = Flask(__name__)
 init_db()
+
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 @app.route("/health")
 def health_check():

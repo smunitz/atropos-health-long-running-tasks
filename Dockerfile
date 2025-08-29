@@ -5,6 +5,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/ .
+COPY frontend/index.html ./templates/index.html
+COPY frontend/main.js ./static/main.js
 
 # Flask port
 EXPOSE 5000
